@@ -9,10 +9,10 @@ export enum planetRatios {
   "neptune" = 164.79132,
 }
 
-type pr = keyof typeof planetRatios;
+type PlanetRatio = keyof typeof planetRatios;
 
-export function age(planet: string, seconds: number): number {
+export function age(planet: PlanetRatio, seconds: number): number {
   let earthYears = seconds / 31557600;
-  let ans = (earthYears / planetRatios[planet as pr]).toFixed(2);
+  let ans = (earthYears / planetRatios[planet]).toFixed(2);
   return parseFloat(ans);
 }
